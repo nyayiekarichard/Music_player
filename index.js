@@ -38,7 +38,7 @@ let songImage = document.querySelector(".facts-banner");
 
 let audio = new Audio();
 let isPaused = false;
-let songs_container = document.querySelector(".recommendations");
+let songs_container = document.querySelector(".recommendation-cards");
 
 let rangeStart = 1;
 let rangeEnd = 3;
@@ -52,7 +52,7 @@ function displaySongs() {
                         <p>${songs[i].name}</p>
                         <p>${songs[i].featuring}</p>
                         <p>3:58 min</p>
-                        <button class="play-button"><img src="Assets/play.png" alt="Play" class="play-icon"></button>
+                        <div class="play-button"><img src="Assets/play.png" alt="Play" class="play-icon"></div>
                     </div>
                 </div>`;
         }
