@@ -64,7 +64,6 @@
                         <p>Featuring Bensoul</p>
                         <p>2:58 min</p>
                         <button class="play-button"><img src="Assets/play.png" alt="Play" class="play-icon"></button>
-
                     </div>
                 </div>
                 <div class="recommendation-card">
@@ -74,7 +73,6 @@
                          <p>Featureing Adekunle</p>
                         <p>3:45 min</p>
                         <button class="play-button"><img src="Assets/play.png" alt="Play" class="play-icon"></button>
-
                     </div>
                 </div>
                 <div class="recommendation-card">
@@ -84,7 +82,6 @@
                         <p>Featureing Scar Mkadinali</p>
                         <p>3:58 min</p>
                         <button class="play-button"><img src="Assets/play.png" alt="Play" class="play-icon"></button>
-
                     </div>
                 </div>
             </div>
@@ -95,16 +92,22 @@
                 <div class="facts-info">
                     <img src="Assets/70563249_350_350.jpg" alt="Facts" class="facts-banner">
                     <div class="facts-details">
-                        <p>True Love Bine X Colors</p>
+                        <p class="song1"></p>True Love Bien X Colors</p>
                         <p>3:02 min</p>
                     </div>
                 </div>
                 <div class="facts-audio">
-                    <audio controls>
+                    <button class="rewindbutton"><img src="Assets/fast-backward.png" alt="Rewind" class="control-icon"></button>
+                    <button class="shufflebutton"><img src="Assets/pause.png" alt="Shuffle" class="control-icon pausebutton"></button>
+                    
+                    <input type="range" id="audio-slider" min="0" max="100" value="0" step="1" class="audio-slider">
+
+                    <audio id="audio-player">
                         <source src="Assets/audio.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <button class="play-button"><img src="Assets/play.png" alt="Play" class="play-icon"></button>
+                    
+                    <button class="nextbutton"><img src="Assets/right-arrow.png" alt="Next" class="control-icon"></button>
                 </div>
             </div>
         </section>

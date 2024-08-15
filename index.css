@@ -147,7 +147,7 @@ body {
 }
 
 .recommendations {
-    margin-bottom: 20px;
+    margin-bottom: 180px;
 }
 
 .recommendation-cards {
@@ -188,12 +188,16 @@ body {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 0px;
+    width: 82%;
 }
 
 .facts-info {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+   
 }
 
 .facts-banner {
@@ -233,3 +237,38 @@ body {
     width: 20px;
     height: 20px;
 }
+.facts-audio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.control-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.rewind-button,
+.shuffle-button,
+.next-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.rewind-button img,
+.shuffle-button img,
+.audio-slider {
+    width: 100%;
+    margin: 0 10px;
+    cursor: pointer;
+    background: #333; /* dark mode color */
+    height: 4px;
+    border-radius: 2px;
+}
+
+.next-button img {
+    width: 24px;
+    height: 24px;
+}
+
