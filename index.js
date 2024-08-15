@@ -9,7 +9,7 @@ let songs = [
     {
         name: "Bensoul",
         genre: "",
-        image: "Assets/",
+        image: "Assets/wahala.jpg",
         featuring: "Adekunle Gold",
         Path: "Assets/Bien Ft Adekunle Gold Wahala.mp3",
     },
@@ -62,13 +62,13 @@ displaySongs();
 
 function play(index) {
     currentsongindex = index;
-    
+
     audio.src = songs[index].Path;
     SongNameElement.innerHTML = songs[index].name;
     songImage.src = songs[index].image;
     audio.playbackRate = 1;
-    
-    audio.onloadedmetadata = function() {
+
+    audio.onloadedmetadata = function () {
         let duration = audio.duration;
         // audio.currentTime = duration;
         audio.play();
@@ -76,16 +76,17 @@ function play(index) {
     };
 }
 
-audio.addEventListener("timeupdate", function() {
+audio.addEventListener("timeupdate", function () {
     updateSlider();
 });
 
-pauseMusic.addEventListener('click', function(){
+pauseMusic.addEventListener('click', function () {
     playPause();
 });
 
-audio.addEventListener("ended", function(){
+audio.addEventListener("ended", function () {
     next();
+    shownotifications(songs[currentsongindex].name,songs[currentsongindex].name,songs[currentsongindex].image)
 });
 
 function playPause() {
@@ -116,6 +117,7 @@ function rewind() {
 
 NextButton.addEventListener("click", function () {
     next();
+
 });
 
 PrevButton.addEventListener("click", function () {
@@ -125,7 +127,7 @@ PrevButton.addEventListener("click", function () {
 
 let audioSlider = document.getElementById('audio-slider');
 
-audioSlider.addEventListener('input', function() {
+audioSlider.addEventListener('input', function () {
     audio.currentTime = audioSlider.value;
 });
 
@@ -134,7 +136,33 @@ function updateSlider() {
     audioSlider.value = audio.currentTime;
 }
 
-audio.onloadedmetadata = function() {
+audio.onloadedmetadata = function () {
     audioSlider.max = audio.duration;
     updateSlider();
 };
+function shownotifications(title,body,icon) {
+    if ("Notification" in window) {
+        console.log(Notification.permission)
+        if (Notification.permission == "granted") {
+            let notification = new Notification(title, {
+                body: body,
+                icon: icon
+            })
+        } else {
+            Notification.requestPermission()
+                .then(function (permission) {
+                    if (permission == "granted") {
+                        let notification = new Notification(title, {
+                            body: body,
+                            icon: icon
+                        })
+                    }
+
+                })
+        }
+
+    } else {
+        alert("Browser does not support notifications")
+    }
+}
+

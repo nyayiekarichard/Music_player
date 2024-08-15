@@ -202,8 +202,17 @@ body {
 
 .facts-banner {
     width: 100px;
-    border-radius: 10px;
+    border-radius: 50%;
     margin-right: 10px;
+    height: 100px;
+    animation: animate 2s linear infinite;
+}@keyframes animate{
+    from{
+        transform: rotate(0 deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 .facts-details {
